@@ -52,7 +52,7 @@ src/
 │       ├── Button.js               # FancyButton wrapper (primary/secondary/danger)
 │       ├── GameUI.js               # HUD panel — score + menu/exit buttons
 │       ├── MenuBackground.js       # Dark background + panel for menu
-│       ├── RadioGroup.js           # @pixi/ui radio group wrapper — used for mode selection
+│       ├── RadioGroup.js           # Card-based radio group — clickable mode cards with highlight
 │       └── ScoreLabel.js           # Score display widget
 │
 └── helpers/
@@ -83,6 +83,10 @@ src/
 ### Mechanic system
 
 Each mechanic declares four boolean flags (`passThrough`, `selfDeath`, `boundaryDeath`, `wallDeath`) and a `getFoodEatenSteps()` method that returns a list of step callbacks. `PlayingEngineState` checks the flags during collision detection and runs the steps via `Sequence` when food is eaten.
+
+### UI components
+
+`RadioGroup` is a custom card-based selector — each item is rendered as a rounded-rect card with a border. Clicking anywhere on a card selects it and redraws the highlight (cyan fill + border for selected, dark panel for unselected). The component accepts `CheckBox` items from `@pixi/ui` for the radio indicator and label, but handles all interaction and layout itself.
 
 ### Scene flow
 
