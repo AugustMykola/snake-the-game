@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #03040f;
+  width:  100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#game-canvas {
+  display: block;
+  border-radius: 2px;
+  box-shadow:
+    0 0 0 1px #00f5ff1a,
+    0 0 30px #00f5ff28,
+    0 0 80px #00f5ff10;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.score-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+}
+
+.score-value {
+  font-size: 32px;
+  font-weight: bold;
+  color: #4ade80;
+  line-height: 1.2;
+}
+
+.panel-title {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.modes-panel {
+  background: #16213e;
+  border: 1px solid #334;
+  border-radius: 8px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.radio-option {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+.radio-option:hover {
+  background: #223;
+}
+
+.radio-option input[type="radio"] {
+  display: none;
+}
+
+.radio-option .radio-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ccc;
+  transition: color 0.15s;
+}
+
+.radio-option .radio-desc {
+  font-size: 11px;
+  color: #555;
+  margin-top: 1px;
+}
+
+.radio-option input[type="radio"]:checked ~ .radio-label {
+  color: #4ade80;
+}
+
+.radio-option input[type="radio"]:checked ~ .radio-desc {
+  color: #888;
+}
+
+.radio-option:has(input:checked) {
+  background: #1c2e1c;
+  border: 1px solid #4ade8055;
+}
+
+.buttons-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+  letter-spacing: 0.5px;
+}
+
+.btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background: #4ade80;
+  color: #0f1f0f;
+}
+
+.btn-secondary {
+  background: #3b82f6;
+  color: #fff;
+}
+
+.btn-danger {
+  background: #ef4444;
+  color: #fff;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
