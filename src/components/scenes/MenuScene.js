@@ -110,7 +110,9 @@ export class MenuScene extends Scene {
       items: checkboxItems,
       values: MODES.map(m => m.value),
       selectedItem: 0,
-      elementsMargin: 14,
+      itemWidth: INNER,
+      itemHeight: 48,
+      elementsMargin: 6,
     });
     this._modeSelector.x = PANEL_X + PAD;
     this._modeSelector.y = y;
